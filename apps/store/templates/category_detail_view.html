@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-
 {% block content %}
-
+    <h1 class="title">{{ category.title }}</h1>
+    
     <div class= "columns is-multiline">
         {% for product in products %}
             <div class = "column is-3">
@@ -17,7 +17,7 @@
 
                     </div>
                     <footer class = "card-footer">
-                        <a href = "{% url 'product_details' product.category.slug product.slug %}" class= "card-footer-item"> view</a>
+                        <a href = "{% url 'product_details' category.slug product.slug %}" class= "card-footer-item"> view</a>
                     </footer>
                 </div>
             </div>
@@ -25,5 +25,4 @@
         {% endfor %}
             
     </div>
-   
-{% endblock %}
+{% endblock%}

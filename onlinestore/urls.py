@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.core.views import frontpage, contact
+from apps.store.views import product_details, category_detail
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', frontpage, name='frontpage'),
-    path('contact/', contact, name='contact')
+    path('contact/', contact, name='contact'),
+    path("<slug:category_slug>/<slug:slug>/", product_details, name="product_details"),
+    path("<slug:slug>", category_detail, name="category_detail")
 ]

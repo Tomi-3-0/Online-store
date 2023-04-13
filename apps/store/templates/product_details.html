@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1 class="title">{{ product.title }}</h1>
+    <h1 class="title">{{ product.price }}</h1>
+
+    {% if product.description %}
+        <p> {{product.description}}</p>
+    {% endif %}
+{% endblock%}
